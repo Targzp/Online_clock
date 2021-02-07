@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        @font-face {
+            font-family: Firo;
+            src: url(font/FiraCode-Medium.ttf);
+        }
+
+        body{
+            background-color: rgb(31,36,48);
+        }
+
+        h1{
+            font-family: Firo;
+            font-size: 80px;
+            text-align: center;
+            color: rgb(255, 255, 255);
+            letter-spacing: 0px;
+            text-shadow: rgb(202, 126, 179) 0px 0px 5px;
+            user-select: none;
+        }
+
+        #clock{
+            font-family: Firo;
+            font-size: 100px;
+            text-align: center;
+            color: rgb(255, 255, 255);
+            letter-spacing: 10px;
+            text-shadow: rgb(202, 126, 179) 0px 0px 5px;
+            user-select: none;
+        }
+
+        #mixed{
+            color: rgb(31,36,48);
+            text-shadow: none;
+        }
+    </style>
+</head>
+<body>
+    <h1>I can and I will</h1>
+    <h1 id="clock">
+    </h1>
+    <script>
+        setTime();
+        function setTime(){
+            let now = new Date();
+            let hour = now.getHours();
+            hour = hour < 10?("0"+hour):hour;
+            let minute = now.getMinutes();
+            minute = minute < 10?("0"+minute):minute;
+            let clock = document.getElementById("clock");
+            if(!document.getElementById("mixed")){
+                clock.innerHTML = `${hour}<span id="mixed">:</span>${minute}`;
+            }else{
+                clock.innerHTML = `${hour}<span>:</span>${minute}`;
+            }
+            setTimeout("setTime()",1000);
+        }
+    </script>
+</body>
+</html>
