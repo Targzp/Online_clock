@@ -17,7 +17,7 @@
 
         h1{
             font-family: Firo;
-            font-size: 80px;
+            font-size: 110px;
             text-align: center;
             color: rgb(255, 255, 255);
             letter-spacing: 0px;
@@ -27,7 +27,7 @@
 
         #clock{
             font-family: Firo;
-            font-size: 100px;
+            font-size: 150px;
             text-align: center;
             color: rgb(255, 255, 255);
             letter-spacing: 10px;
@@ -55,9 +55,9 @@
             minute = minute < 10?("0"+minute):minute;
             let clock = document.getElementById("clock");
             if(!document.getElementById("mixed")){
-                clock.innerHTML = `${hour}<span id="mixed">:</span>${minute}`;
+                clock.innerHTML = `${hour}<span id="mixed" style="vertical-align: 10px;">:</span>${minute}`;
             }else{
-                clock.innerHTML = `${hour}<span>:</span>${minute}`;
+                clock.innerHTML = `${hour}<span style="vertical-align: 10px;">:</span>${minute}`;
             }
             setTimeout("setTime()",1000);
         }
